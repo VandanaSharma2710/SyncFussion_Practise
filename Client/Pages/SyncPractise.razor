@@ -1,0 +1,22 @@
+﻿@page "/syncpractise"
+
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Spinner
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+<h3>SyncPractise</h3>
+
+<SfButton CssClass="e-primary" OnClick="onClick">click me</SfButton>
+<p>@message</p>
+
+<SfButton OnClick="showSpinner">Load data</SfButton>
+
+<SfSpinner @bind-Visible="isLoading" Label="Laoding ...."></SfSpinner>
+
+<SfGrid DataSource="@playerList">
+    <GridColumns>
+        <GridColumn Field="Id" HeaderText="ID" Width="100" TextAlign="TextAlign.Center"></GridColumn>
+        <GridColumn Field="Name" HeaderText="Player Name" Width="200"></GridColumn>
+        <GridColumn Field="Game" HeaderText="Game" Width="200"></GridColumn>
+    </GridColumns>
+</SfGrid>
