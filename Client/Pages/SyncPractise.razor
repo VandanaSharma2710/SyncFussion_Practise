@@ -9,7 +9,7 @@
 <SfButton CssClass="e-primary" OnClick="onClick">click me</SfButton>
 <p>@message</p>
 
-<SfButton OnClick="showSpinner">Load data</SfButton>
+<SfButton Onclick="showSpinner">Load data</SfButton>
 
 <SfSpinner @bind-Visible="isLoading" Label="Laoding ...."></SfSpinner>
 
@@ -17,6 +17,24 @@
     <GridColumns>
         <GridColumn Field="Id" HeaderText="ID" Width="100" TextAlign="TextAlign.Center"></GridColumn>
         <GridColumn Field="Name" HeaderText="Player Name" Width="200"></GridColumn>
+        <GridColumn Field="Age" HeaderText="Age" Width="200"></GridColumn>
         <GridColumn Field="Game" HeaderText="Game" Width="200"></GridColumn>
+        <GridColumn Field="IsActive" HeaderText="Is Active" Width="200" DisplayAsCheckBox="true" TextAlign="TextAlign.Center"></GridColumn>
     </GridColumns>
 </SfGrid>
+
+<h4>Input form</h4>
+<div class="mb-3">
+    <SfTextBox Placeholder="Enter player name" @bind-Value="Name" ></SfTextBox>
+</div>
+<div class="mb-3">
+    <SfNumericTextBox Placeholder="Age" @bind-Value="Age"></SfNumericTextBox>
+</div>
+<div class="mb-3">
+    <SfTextBox Placeholder="Game" @bind-Value="Game"></SfTextBox>
+</div>
+<div class="mb-3">
+    <SfCheckBox Label="is Active" @bind-Checked="IsActive"></SfCheckBox>
+</div>
+<SfButton CssClass="e-success"  Onclick="saveInfo">Save</SfButton>
+
